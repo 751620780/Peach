@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67E21558-1DA2-4023-AEE5-93FD5B1B609B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Peach</RootNamespace>
+    <AssemblyName>Peach</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\bin\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PacketDotNet">
+      <HintPath>..\bin\PacketDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpPcap">
+      <HintPath>..\bin\SharpPcap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="peach.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="samples\packages.config" />
+    <None Include="samples\wscript_build" />
+    <None Include="wscript_build" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="samples\com.xml" />
+    <Content Include="samples\CrashableServer.xml" />
+    <Content Include="samples\CrashingFileConsumer.xml" />
+    <Content Include="samples\DebuggerCrashReporter.xml" />
+    <Content Include="samples\DebuggerCrashWrangler.xml" />
+    <Content Include="samples\DebuggerLinux.xml" />
+    <Content Include="samples\DebuggerLinuxCrashMonitor.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="samples\DebuggerWindows.xml" />
+    <Content Include="samples\DebuggerWindowsKernel.xml" />
+    <Content Include="samples\ExampleDefinitionsFile.xml" />
+    <Content Include="samples\FileFuzzer.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="samples\FileFuzzerGui.xml" />
+    <Content Include="samples\FilePerIteration.xml" />
+    <Content Include="samples\fixup.py" />
+    <Content Include="samples\HelloWorld.xml" />
+    <Content Include="samples\Network.xml" />
+    <Content Include="samples\peach_ws_client.html" />
+    <Content Include="samples\peach_ws_client.js" />
+    <Content Include="samples\peach_ws_template.html" />
+    <Content Include="samples\RelationCount.xml" />
+    <Content Include="samples\RelationSize.xml" />
+    <Content Include="samples\RemoteInclude.xml" />
+    <Content Include="samples\RemotePublisher.xml" />
+    <Content Include="samples\ScriptFixup.xml" />
+    <Content Include="samples\Server-Example.xml" />
+    <Content Include="samples\StringTokenAnalyzer.xml" />
+    <Content Include="samples\websocket.xml" />
+    <Content Include="samples\XmlAnalyzer.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Peach.Core.OS.Windows\Peach.Core.OS.Windows.csproj">
+      <Project>{fd557408-3aa9-4718-b90c-ae47df42b800}</Project>
+      <Name>Peach.Core.OS.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peach.Core.Test.OS.Windows\Peach.Core.Test.OS.Windows.csproj">
+      <Project>{5acef450-d954-4748-9197-d191fbcbe08b}</Project>
+      <Name>Peach.Core.Test.OS.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peach.Core\Peach.Core.csproj">
+      <Project>{350b8721-b369-4373-90a3-ac4168b39e69}</Project>
+      <Name>Peach.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
