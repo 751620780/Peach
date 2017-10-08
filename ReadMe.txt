@@ -1,13 +1,14 @@
 READDME:
-����Peach��Ŀ��˵����
+这是Peach项目的说明。
 
-NLog��һ������.NETƽ̨��д����⣬���ǿ���ʹ��NLog��Ӧ�ó��������Ӽ�Ϊ���Ƶĸ��ٵ��Դ��롣
-NLog���������Զ���Ӹ�����Ϣ����Դ��source������¼������Ϣ��Ŀ�꣨target���Ĺ���rules����
-��¼������Ϣ��Ŀ�꣨target������Ϊ���¼�����ʽ��
-	1. �ļ�
-	2. �ı�����̨
+NLog是一个基于.NET平台编写的类库，我们可以使用NLog在应用程序中添加极为完善的跟踪调试代码。
+NLog允许我们自定义从跟踪消息的来源（source）到记录跟踪信息的目标（target）的规则（rules）。
+记录跟踪信息的目标（target）可以为如下几种形式：
+	1. 文件
+	2. 文本控制台
 	3. Email
-	4. ���ݿ�
-	5. �����е������������ͨ��TCP��UDP��
-	6. ����MSMQ����Ϣ����
-	7. Windowsϵͳ��־
+	4. 数据库
+	5. 网络中的其它计算机（通过TCP或UDP）
+	6. 基于MSMQ的消息队列
+	7. Windows系统日志
+该工程现在使用的是Peach开源代码。并未作任何修改。
